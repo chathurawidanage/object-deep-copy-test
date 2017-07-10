@@ -21,19 +21,19 @@ public class Test {
         System.out.println("\nStarting Speed Test\n-----------------\n");
         JSONTest jsonTest = new JSONTest();
         double averageTime = TestExecutor.speedTest(jsonTest, sampleObjectList);
-        System.out.println("JSON Copy time : " + averageTime);
+        System.out.println("JSON Copy avg time(ms) : " + averageTime);
 
         ManualCopyTest manualCopyTest = new ManualCopyTest();
         averageTime = TestExecutor.speedTest(manualCopyTest, sampleObjectList);
-        System.out.println("Manual Copy time : " + averageTime);
+        System.out.println("Manual Copy avg time(ms) : " + averageTime);
 
         JavaSerializeTest javaSerializeTest = new JavaSerializeTest();
         averageTime = TestExecutor.speedTest(javaSerializeTest, sampleObjectList);
-        System.out.println("Java Serialization Copy time : " + averageTime);
+        System.out.println("Java Serialization Copy avg time(ms) : " + averageTime);
 
         ProtocolBufferTest protocolBufferTest = new ProtocolBufferTest();
         averageTime = TestExecutor.speedTest(protocolBufferTest, sampleProtoObjectList);
-        System.out.println("Protocol buffer Copy time : " + averageTime);
+        System.out.println("Protocol buffer Copy avg time(ms) : " + averageTime);
 
         System.out.println("\nStarting Space Test\n-----------------\n");
 
