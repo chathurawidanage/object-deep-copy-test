@@ -6,15 +6,15 @@ import java.io.IOException;
 /**
  * @author Chathura Widanage
  */
-public class JSONTest extends AbstractTest {
+public class JSONTest extends AbstractTest<SampleObject> {
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
-    private byte[] serialize(SampleObject sampleObject) throws JsonProcessingException {
+    public byte[] serialize(SampleObject sampleObject) throws JsonProcessingException {
         return objectMapper.writeValueAsBytes(sampleObject);
     }
 
-    private SampleObject deserialize(byte[] data) throws IOException {
+    public SampleObject deserialize(byte[] data) throws IOException {
         return objectMapper.readValue(data, SampleObject.class);
     }
 

@@ -28,4 +28,28 @@ public class SampleCreator {
             sampleObject.children.add(child);
         }
     }
+
+    public SampleObjectProto.SampleObject mirrorToProtocolBuffer(SampleObject sampleObject) {
+        SampleObjectProto.SampleObject.Builder emptyObject = createEmptyObject();
+        doRecursiveMirror(sampleObject, emptyObject);
+        return emptyObject.build();
+    }
+
+    private void doRecursiveMirror(SampleObject sampleObject, SampleObjectProto.SampleObject.Builder mirrored) {
+        for (int i = 0; i < sampleObject.children.size(); i++) {
+            SampleObject child = sampleObject.children.get(i);
+            SampleObjectProto.SampleObject.Builder mirroredChild = createEmptyObject();
+            doRecursiveMirror(child, mirroredChild);
+            mirrored.addChildren(i, mirroredChild.build());
+        }
+    }
+
+    private SampleObjectProto.SampleObject.Builder createEmptyObject() {
+        return SampleObjectProto.SampleObject
+                .newBuilder()
+                .setProp1("property1")
+                .setProp2("property2")
+                .setProp3("property3")
+                .setProp4("property4");
+    }
 }

@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+//option java_package = "com.example.tutorial";
+option java_outer_classname = "SampleObjectProto";
+
+message SampleObject {
+  	required string prop1 = 1 [default = "property1"];
+	required string prop2 = 2 [default = "property2"];
+	required string prop3 = 3 [default = "property3"];
+	required string prop4 = 4 [default = "property4"];
+  	repeated SampleObject children = 5;
+}
+

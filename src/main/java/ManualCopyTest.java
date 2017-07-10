@@ -1,7 +1,7 @@
 /**
  * @author Chathura Widanage
  */
-public class ManualCopyTest extends AbstractTest {
+public class ManualCopyTest extends AbstractTest<SampleObject> {
 
     public SampleObject copy(SampleObject sampleObject) {
         SampleObject copy = new SampleObject();
@@ -13,5 +13,15 @@ public class ManualCopyTest extends AbstractTest {
             copy.children.add(this.copy(child));
         });
         return copy;
+    }
+
+    @Override
+    public byte[] serialize(SampleObject sampleObject) throws Exception {
+        return new byte[0];
+    }
+
+    @Override
+    public SampleObject deserialize(byte[] data) throws Exception {
+        return null;
     }
 }
