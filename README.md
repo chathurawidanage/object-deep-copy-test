@@ -3,7 +3,7 @@ This test finds the most efficient object deep copying mechanism that can be app
 
 Test results were as follows,
 
-Starting Speed Test
+Speed Test
 -----------------
 
 * JSON Copy time(ms) : 2.016
@@ -11,7 +11,7 @@ Starting Speed Test
 * Java Serialization Copy time(ms) : 2.711333333333333
 * Protocol buffer Copy time(ms) : 5.508666666666667
 
-Starting Space Test
+Space Test
 -----------------
 
 * JSON space(MB) : 331.006339
