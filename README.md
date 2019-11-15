@@ -6,14 +6,21 @@ Test results were as follows,
 Speed Test
 -----------------
 
-* JSON Copy time(ms) : 2.016
-* Manual Copy time(ms) : 0.11666666666666667
-* Java Serialization Copy time(ms) : 2.711333333333333
-* Protocol buffer Copy time(ms) : 5.508666666666667
+JSON Copy avg time(ms) : 30.733333333333334
+Manual Copy avg time(ms) : 11.733333333333333
+Java Clonable avg time(ms) : 0.6
+Java Serialization Copy avg time(ms) : 15.666666666666666
+Protocol buffer Copy avg time(ms) : 4.733333333333333
+Apache Commons Copy avg time(ms) : 7.6
+Kryo Copy avg time(ms) : 10.733333333333333
+Custom Packing avg time(ms) : 5.333333333333333
 
 Space Test
 -----------------
 
-* JSON space(MB) : 331.006339
-* Java  Serialization space(MB) : 148.858127
-* Protocol buffer space(MB) : 159.567347
+JSON space(MB) : 6.963011
+Java  Serialization space(MB) : 6.118144
+Protocol buffer space(MB) : 5.29589
+Apache commons space(MB) : 6.118144
+Kryo space(MB) : 15.72864
+Custom Packing space(MB) : 5.739828

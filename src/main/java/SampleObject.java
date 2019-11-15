@@ -1,18 +1,31 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author Chathura Widanage
  */
-public class SampleObject implements Serializable {
+public class SampleObject implements Serializable, Cloneable {
 
-    public String prop1 = "property1";
-    public String prop2 = "property2";
-    public String prop3 = "property3";
-    public String prop4 = "property4";
+    public String prop1;
+    public String prop2;
+    public String prop3;
+    public String prop4;
 
-    public List<SampleObject> children = new ArrayList<>();
+    public List<SampleObject> children;
+
+    public SampleObject() {
+        this.prop1 = UUID.randomUUID().toString();
+        this.prop2 = UUID.randomUUID().toString();
+        this.prop3 = UUID.randomUUID().toString();
+        this.prop4 = UUID.randomUUID().toString();
+        this.children = new ArrayList<>();
+    }
+
+    public SampleObject(boolean create){
+
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -36,5 +49,15 @@ public class SampleObject implements Serializable {
         result = 31 * result + prop4.hashCode();
         result = 31 * result + children.hashCode();
         return result;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        SampleObject clone = (SampleObject) super.clone();
+        clone.children = new ArrayList<>();
+        for (SampleObject child : this.children) {
+            clone.children.add((SampleObject) child.clone());
+        }
+        return clone;
     }
 }

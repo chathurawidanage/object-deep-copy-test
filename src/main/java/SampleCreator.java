@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.UUID;
 
 /**
  * @author Chathura Widanage
@@ -47,9 +48,9 @@ public class SampleCreator {
     private SampleObjectProto.SampleObject.Builder createEmptyObject() {
         return SampleObjectProto.SampleObject
                 .newBuilder()
-                .setProp1("property1")
-                .setProp2("property2")
-                .setProp3("property3")
-                .setProp4("property4");
+                .setProp1(UUID.randomUUID().toString())
+                .setProp2(UUID.randomUUID().toString())
+                .setProp3(UUID.randomUUID().toString())
+                .setProp4(UUID.randomUUID().toString());
     }
 }
